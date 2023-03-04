@@ -16,8 +16,19 @@ function addBookToLibrary() {
     read = prompt('Have you read it?');
     const book = new Book(title, author, pages, read);
     myLibrary.push(book);
+    libraryLoop();
+    
 }
-addBookToLibrary();
+function libraryLoop() {
 for (let i = 0; i < myLibrary.length; i++) {
-    console.log(myLibrary[i].info());
+    const container = document.querySelector('.container');
+    const div = document.createElement('div');
+    div.textContent = myLibrary[i].info();
+    container.append(div);
 }
+}
+
+let button = document.querySelector('button');
+button.addEventListener('click', ()=> {
+    addBookToLibrary();
+})
