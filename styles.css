@@ -55,3 +55,62 @@ h1 {
     
     border: solid blue 5px;
 }
+.popup {
+    position: fixed;
+    height: 250px;
+    width: 400px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border: solid 4px gray;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+}
+.popup.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+.popup-header {
+    text-align: center;
+    margin-top: 7px;
+    font-size: 25px;
+}
+
+.overlay {
+    position:fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+
+.overlay.active {
+    pointer-events: all;
+    opacity: 70%;
+}
+
+form {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 10px;
+    gap: 60px
+}
+
+.labels {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 20px;
+
+}
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+#read {
+    margin-right: auto;
+}

@@ -1,22 +1,31 @@
 const books = document.querySelector(".books")
 const btn = document.querySelector('button')
+const overlay = document.querySelector('.overlay')
+const popup = document.querySelector('.popup')
 
 let bookID = 0;
-function addBook() {
+function addBook(book) {
+    
     let div = document.createElement('div');
+    div.innerHTML = book.title
     div.id = bookID++;
     div.className = 'book'
     myLibrary.push(div);
-    if (myLibrary.length > 5) {
-        
-    }
+
     for(let i = 0; i < myLibrary.length; i++) {
         books.append(myLibrary[i])
     }
      
 }
 btn.addEventListener('click', ()=> {
-    addBook();
+   overlay.classList.add('active')
+   popup.classList.add('active')
+   let title = "yes"
+   let author = "yes"
+   let pages = "yes"
+   let read= "yes"
+   book = new Book(title, author, pages, read)
+   addBook(book)
 })
 
 
@@ -28,6 +37,6 @@ function Book(title, author, pages, read) {
     this.pages = pages
     this.read = read
 }
-function addBookToLibrary(book) {
+function addBookToLibrary(Book) {
     myLibrary.push(book)
 }
