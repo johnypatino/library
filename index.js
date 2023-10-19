@@ -1,11 +1,19 @@
 const books = document.querySelector(".books")
 const btn = document.querySelector('button')
 
-
+let bookID = 0;
 function addBook() {
     let div = document.createElement('div');
+    div.id = bookID++;
     div.className = 'book'
-    books.append(div);
+    myLibrary.push(div);
+    if (myLibrary.length > 5) {
+        
+    }
+    for(let i = 0; i < myLibrary.length; i++) {
+        books.append(myLibrary[i])
+    }
+     
 }
 btn.addEventListener('click', ()=> {
     addBook();
