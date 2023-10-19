@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    margin: 0;
+    justify-content: center;
+}
+
+.header {
+    margin-top: 10px;
+    text-align: center;
+    height: 60px;
+    font-size: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    margin-left: 40px
+
+}
+h1 {
+   
+}
+#add-book {
+    margin-left: auto;
+    margin-right: 20px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: lightgreen;
+    color:white;
+    font-size: 30px;
+    border-width: 1px;
+}
+.library-container {
+    border: solid 10px black;
+    min-height: 600px;
+    min-width: 500px;
+    display: flex;
+    
+}
+.books {
+    
+   margin-left: 5%;
+   margin-right: 5%;
+    display: flex;
+    min-width: 500px;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.book {
+    
+    min-width: 200px;
+    height: 200px;
+    
+    border: solid blue 5px;
+}
