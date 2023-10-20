@@ -18,10 +18,10 @@
         </div>
         
     </div>
-    <div class="popup active">
+    <div class="popup">
         <div class="popup-header">ADD BOOK</div>
         <div class="popup-body">
-            <form>
+            <form action="" id="form">
                 <div class="labels">
                     <label for="title">Title</label>
                     <label for="author">Author</label> 
@@ -29,11 +29,11 @@
                     <label for="read">Read</label>
                 </div>
                 <div class="inputs">
-                    <input type="text" id="title" name="title">
-                    <input type="text" id="author" name="author">
-                    <input type="number" id="pages" name="pages">
+                    <input type="text" id="title" name="title" required>
+                    <input type="text" id="author" name="author" required>
+                    <input type="number" id="pages" name="pages" required>
                     <input type="checkbox" id="read" name="read">
-                    <input type="submit" name="submit" id="submit">
+                    <button type=submit>Add</button>
                 </div>
                 
             </form>

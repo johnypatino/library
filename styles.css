@@ -49,9 +49,10 @@ h1 {
     flex-wrap: wrap;
 }
 .book {
-    
+    font-size: 30px;
     min-width: 200px;
     height: 200px;
+    
     
     border: solid blue 5px;
 }

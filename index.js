@@ -2,12 +2,15 @@ const books = document.querySelector(".books")
 const btn = document.querySelector('button')
 const overlay = document.querySelector('.overlay')
 const popup = document.querySelector('.popup')
+const form = document.querySelector('#form')
+
+
 
 let bookID = 0;
 function addBook(book) {
     
     let div = document.createElement('div');
-    div.innerHTML = book.title
+    div.innerHTML = `Title: ${book.title} <br> Author: ${book.author} <br> Pages: ${book.pages} <br> Read: ${book.read}` ;
     div.id = bookID++;
     div.className = 'book'
     myLibrary.push(div);
@@ -15,17 +18,29 @@ function addBook(book) {
     for(let i = 0; i < myLibrary.length; i++) {
         books.append(myLibrary[i])
     }
+    overlay.classList.remove('active')
+    popup.classList.remove('active')
      
 }
 btn.addEventListener('click', ()=> {
+
    overlay.classList.add('active')
    popup.classList.add('active')
-   let title = "yes"
-   let author = "yes"
-   let pages = "yes"
-   let read= "yes"
-   book = new Book(title, author, pages, read)
-   addBook(book)
+   form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let title = document.getElementById("title")
+    let author = document.getElementById("author")
+    let pages = document.getElementById("pages")
+    let read = document.getElementById("read")
+    if (read.value == 'on') {
+        read = true
+    }
+    else {
+        read = false
+    }
+    book = new Book(title.value, author.value, pages.value, read)
+    addBook(book)
+    })
 })
 
 
