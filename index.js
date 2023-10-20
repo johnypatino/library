@@ -3,7 +3,7 @@ const btn = document.querySelector('button')
 const overlay = document.querySelector('.overlay')
 const popup = document.querySelector('.popup')
 const form = document.querySelector('#form')
-
+const myLibrary = []
 
 
 let bookID = 0;
@@ -15,20 +15,23 @@ function addBook(book) {
     div.className = 'book'
     myLibrary.push(div);
     console.log(myLibrary)
-    
-    for (let i = 0 ; i < myLibrary.length; i++) {
-        console.log("yes")
-        books.append(myLibrary[i])
-    }
+    display_books();
     overlay.classList.remove('active')
     popup.classList.remove('active')
      
 }
+function display_books() {
+    for (let i = 0 ; i < myLibrary.length; i++) {
+        console.log("yes")
+        books.append(myLibrary[i])
+    }
+}
 btn.addEventListener('click', ()=> {
-
    overlay.classList.add('active')
    popup.classList.add('active')
-   form.addEventListener("submit", (e) => {
+   
+})
+form.addEventListener("submit", (e) => {
     e.preventDefault();
     let title = document.getElementById("title")
     let author = document.getElementById("author")
@@ -42,11 +45,7 @@ btn.addEventListener('click', ()=> {
     }
     book = new Book(title.value, author.value, pages.value, read)
     addBook(book)
-    })
 })
-
-
-const myLibrary = []
 
 function Book(title, author, pages, read) {
     this.title = title
