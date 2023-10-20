@@ -14,8 +14,10 @@ function addBook(book) {
     div.id = bookID++;
     div.className = 'book'
     myLibrary.push(div);
-
-    for(let i = 0; i < myLibrary.length; i++) {
+    console.log(myLibrary)
+    
+    for (let i = 0 ; i < myLibrary.length; i++) {
+        console.log("yes")
         books.append(myLibrary[i])
     }
     overlay.classList.remove('active')
@@ -52,6 +54,4 @@ function Book(title, author, pages, read) {
     this.pages = pages
     this.read = read
 }
-function addBookToLibrary(Book) {
-    myLibrary.push(book)
-}
+
