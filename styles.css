@@ -62,7 +62,7 @@ h1 {
     border: solid brown 5px;
 }
 
-#delete {
+.delete {
     height: 20px;
     width: 20px;
     align-items: flex-end;

@@ -7,12 +7,13 @@ const myLibrary = []
 const exit = document.querySelector('#exit')
 
 
+
 let bookID = 0;
 function addBook(book) {
     
     let div = document.createElement('div');
     
-    div.innerHTML = `<div> Title: ${book.title} </div><div> Author: ${book.author}</div><div> Pages: ${book.pages} </div> <div> Status: ${book.read}</div><div><button id="delete"> x </button>` ;
+    div.innerHTML = `<div> Title: ${book.title} </div><div> Author: ${book.author}</div><div> Pages: ${book.pages} </div> <div> Status: ${book.read}</div><div><button class="delete"> x </button>` ;
     div.id = bookID++;
     div.className = 'book'
     myLibrary.push(div);
@@ -20,6 +21,13 @@ function addBook(book) {
     display_books();
     overlay.classList.remove('active')
     popup.classList.remove('active')
+    const del = document.querySelector('.delete');
+    del.addEventListener('click', ()=> {
+        myLibrary.splice(div.id, 1);
+        books.removeChild(books.firstChild)
+        display_books();
+    })
+    
      
 }
 function display_books() {
