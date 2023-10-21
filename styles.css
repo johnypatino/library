@@ -32,14 +32,14 @@ h1 {
     border-width: 1px;
 }
 .library-container {
-    border: solid 10px black;
+    
     min-height: 600px;
     min-width: 500px;
     display: flex;
     
 }
 .books {
-    
+
    margin-left: 5%;
    margin-right: 5%;
     display: flex;
@@ -49,12 +49,26 @@ h1 {
     flex-wrap: wrap;
 }
 .book {
-    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding:10px;
+    font-size: 25px;
     min-width: 200px;
     height: 200px;
-    
-    
-    border: solid blue 5px;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 10%;
+    border: solid brown 5px;
+}
+
+#delete {
+    height: 20px;
+    width: 20px;
+    align-items: flex-end;
+    border: 5px;
+    border-radius: 15%;
+    background-color: red;
 }
 .popup {
     position: fixed;

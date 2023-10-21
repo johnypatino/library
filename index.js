@@ -11,7 +11,8 @@ let bookID = 0;
 function addBook(book) {
     
     let div = document.createElement('div');
-    div.innerHTML = `Title: ${book.title} <br> Author: ${book.author} <br> Pages: ${book.pages} <br> Read: ${book.read}` ;
+    
+    div.innerHTML = `<div> Title: ${book.title} </div><div> Author: ${book.author}</div><div> Pages: ${book.pages} </div> <div> Status: ${book.read}</div><div><button id="delete"> x </button>` ;
     div.id = bookID++;
     div.className = 'book'
     myLibrary.push(div);
@@ -43,10 +44,10 @@ form.addEventListener("submit", (e) => {
     let pages = document.getElementById("pages")
     let read = document.getElementById("read")
     if (read.value == 'on') {
-        read = true
+        read = "Finsished"
     }
     else {
-        read = false
+        read = "Reading"
     }
     book = new Book(title.value, author.value, pages.value, read)
     addBook(book)
