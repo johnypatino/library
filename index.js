@@ -4,6 +4,7 @@ const overlay = document.querySelector('.overlay')
 const popup = document.querySelector('.popup')
 const form = document.querySelector('#form')
 const myLibrary = []
+const exit = document.querySelector('#exit')
 
 
 let bookID = 0;
@@ -29,7 +30,11 @@ function display_books() {
 btn.addEventListener('click', ()=> {
    overlay.classList.add('active')
    popup.classList.add('active')
-   
+
+})
+exit.addEventListener('click', () => {
+    overlay.classList.remove('active')
+   popup.classList.remove('active')
 })
 form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -45,6 +50,7 @@ form.addEventListener("submit", (e) => {
     }
     book = new Book(title.value, author.value, pages.value, read)
     addBook(book)
+    form.reset()
 })
 
 function Book(title, author, pages, read) {
